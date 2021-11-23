@@ -1,0 +1,22 @@
+#/bin/bash
+#Author: Odalys Mendoza
+#Identify OS version
+centos=$(cat /etc/centos-release)
+echo "The Centos version is: $centos"
+
+#Installing clavam
+#in=$(rpm -q clamav)
+exist()
+{
+        command -v "clamav" >/dev/null 2>&1
+}
+if exist;
+then
+        echo "installed"
+else
+        echo "No installed"
+        sudo yum install -y clamav
+fi
+
+#install EPEL repositories
+sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
