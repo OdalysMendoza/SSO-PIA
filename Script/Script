@@ -1,5 +1,6 @@
 #/bin/bash
 #Author: Odalys Mendoza
+
 #Identify OS version
 centos=$(cat /etc/centos-release)
 echo "The Centos version is: $centos"
